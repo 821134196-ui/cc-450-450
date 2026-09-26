@@ -1,0 +1,13 @@
+{
+  "name": "hoodcare-platform",
+  "version": "1.0.0",
+  "description": "餐饮后厨排烟罩清洗与验收平台（零依赖 Node 22+）",
+  "main": "run.js",
+  "scripts": {
+    "start": "node run.js",
+    "test": "node --test 'test/*.test.js'"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
