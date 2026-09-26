@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>净厨 · 排烟罩清洗与验收平台</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#35c46a" stroke-width="2" stroke-linecap="round">
+          <path d="M4 9h16l-1.5 10h-13z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+        </svg>
+      </div>
+      <div><div class="brand-name">净厨 HoodCare</div><div class="brand-sub">排烟罩清洗 · 验收平台</div></div>
+    </div>
+    <nav id="nav">
+      <a data-view="dashboard" class="active"><span>▦</span> 工作台</a>
+      <a data-view="plans"><span>◷</span> 周期计划</a>
+      <a data-view="windows"><span>⏲</span> 停灶协调</a>
+      <a data-view="jobs"><span>⚙</span> 分段施工单</a>
+      <a data-view="finance"><span>¥</span> 费用复核</a>
+    </nav>
+    <div class="side-foot">
+      <div class="legend-title">油污等级</div>
+      <div class="legend"><i class="oil oil0"></i>0 级 洁净</div>
+      <div class="legend"><i class="oil oil1"></i>Ⅰ 级 轻微</div>
+      <div class="legend"><i class="oil oil2"></i>Ⅱ 级 中等</div>
+      <div class="legend"><i class="oil oil3"></i>Ⅲ 级 重油污</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 id="view-title">工作台</h1>
+      <div class="top-actions">
+        <div id="sse-dot" class="sse-dot" title="提醒通道"></div>
+        <button id="bell" class="icon-btn">🔔<span id="bell-badge" class="badge hidden">0</span></button>
+        <select id="user-select" class="user-select" title="切换当前登录人员"></select>
+      </div>
+    </header>
+    <section id="content" class="content"></section>
+  </main>
+</div>
+
+<!-- 通知抽屉 -->
+<div id="drawer-mask" class="mask hidden"></div>
+<aside id="notif-drawer" class="drawer hidden">
+  <div class="drawer-head"><b>到期与超时提醒</b><button id="drawer-close" class="ghost-btn">关闭</button></div>
+  <div id="notif-list" class="notif-list"></div>
+</aside>
+
+<!-- 通用弹窗 -->
+<div id="modal-mask" class="mask hidden"></div>
+<div id="modal" class="modal hidden">
+  <div class="modal-head"><b id="modal-title"></b><button id="modal-close" class="ghost-btn">✕</button></div>
+  <div id="modal-body" class="modal-body"></div>
+</div>
+
+<!-- 签字画布弹窗 -->
+<div id="sign-modal" class="modal sign-modal hidden">
+  <div class="modal-head"><b>门店验收签字</b><button id="sign-cancel" class="ghost-btn">✕</button></div>
+  <div class="modal-body">
+    <p class="sign-tip">请门店负责人在下方区域签名（已适配戴手套操作，签名线加宽）</p>
+    <canvas id="sign-canvas" width="680" height="300"></canvas>
+    <div class="sign-row">
+      <input id="sign-name" class="input" placeholder="签字人姓名" style="flex:1">
+      <button id="sign-clear" class="ghost-btn big">重签</button>
+      <button id="sign-confirm" class="btn primary big">确认签字</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<script src="/app.js"></script>
+</body>
+</html>

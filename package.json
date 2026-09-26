@@ -1,0 +1,14 @@
+{
+  "name": "hoodcare",
+  "version": "1.0.0",
+  "description": "餐饮后厨排烟罩清洗与验收平台（周期计划/停灶协调/分段施工/照片对照/复装核验/门店签字/费用复核）",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --no-warnings src/server.js",
+    "test": "node --no-warnings --test test/*.test.js"
+  }
+}
